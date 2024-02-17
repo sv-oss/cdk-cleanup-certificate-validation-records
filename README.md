@@ -14,7 +14,7 @@ The construct can be instantiated explicitely to cleanup after a specific certif
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CertificateValidationRecordCleanup } from '@sv-oss/cdk-cleanup-certificate-validation-records'
+import { CertificateValidationRecordCleanup } from '@servicevic-oss/cdk-cleanup-certificate-validation-records'
 
 export class TestStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: TestStackProps) {
@@ -60,6 +60,7 @@ In this example, we have knowledge of the hosted zone
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { CertificateValidationRecordCleanup } from '@servicevic-oss/cdk-cleanup-certificate-validation-records'
 
 export class TestStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: TestStackProps) {
@@ -105,6 +106,7 @@ In this example, we have no knowledge of the hosted zone used to validate the ce
 
 ```typescript
 import * as cdk from 'aws-cdk-lib';
+import { CertificateValidationRecordCleanup } from '@servicevic-oss/cdk-cleanup-certificate-validation-records'
 
 const app = new cdk.App();
 
