@@ -25,7 +25,7 @@ export class TestStack extends cdk.Stack {
     });
 
     const cert1 = new cdk.aws_certificatemanager.Certificate(this, 'Cert', {
-      domainName: `mydomain.${envHostedZoneExternal.zoneName}`,
+      domainName: `mydomain.${zone.zoneName}`,
       validation: cdk.aws_certificatemanager.CertificateValidation.fromDns(zone),
       subjectAlternativeNames: [
         `mydomain2.${zone.zoneName}`,
@@ -33,18 +33,18 @@ export class TestStack extends cdk.Stack {
       ],
     });
     const cert2 = new cdk.aws_certificatemanager.Certificate(this, 'Cert', {
-      domainName: `another.${envHostedZoneExternal.zoneName}`,
+      domainName: `another.${zone.zoneName}`,
       validation: cdk.aws_certificatemanager.CertificateValidation.fromDns(zone),
     });
 
     new CertificateValidationRecordCleanup(this, `cleanup-${cert1.node.id}`, {
       certificate: cert1,
-      hostedZone: envHostedZoneExternal,
+      hostedZone: zone,
     });
 
     new CertificateValidationRecordCleanup(this, `cleanup-${cert2.node.id}`, {
       certificate: cert2,
-      hostedZone: envHostedZoneExternal,
+      hostedZone: zone,
     });
   };
 }
@@ -71,7 +71,7 @@ export class TestStack extends cdk.Stack {
     });
 
     new cdk.aws_certificatemanager.Certificate(this, 'Cert', {
-      domainName: `mydomain.${envHostedZoneExternal.zoneName}`,
+      domainName: `mydomain.${zone.zoneName}`,
       validation: cdk.aws_certificatemanager.CertificateValidation.fromDns(zone),
       subjectAlternativeNames: [
         `mydomain2.${zone.zoneName}`,
@@ -79,7 +79,7 @@ export class TestStack extends cdk.Stack {
       ],
     });
     new cdk.aws_certificatemanager.Certificate(this, 'Cert', {
-      domainName: `another.${envHostedZoneExternal.zoneName}`,
+      domainName: `another.${zone.zoneName}`,
       validation: cdk.aws_certificatemanager.CertificateValidation.fromDns(zone),
     });
 
