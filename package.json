@@ -1,5 +1,5 @@
 {
-  "name": "@sv-oss/cdk-cleanup-certificate-validation-records",
+  "name": "@servicevic-oss/cdk-cleanup-certificate-validation-records",
   "repository": {
     "type": "git",
     "url": "https://github.com/sv-oss/cdk-cleanup-certificate-validation-records"

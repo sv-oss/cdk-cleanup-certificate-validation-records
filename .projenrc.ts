@@ -31,6 +31,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   devDeps: [
     '@types/aws-lambda',
   ],
-  packageName: '@sv-oss/cdk-cleanup-certificate-validation-records',
+  packageName: '@servicevic-oss/cdk-cleanup-certificate-validation-records',
 });
 project.synth();
