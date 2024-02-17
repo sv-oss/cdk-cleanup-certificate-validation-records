@@ -9,7 +9,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'cdk-cleanup-certificate-validation-records',
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/matteo.sessa/cdk-cleanup-certificate-validation-records.git',
+  repositoryUrl: 'https://github.com/sv-oss/cdk-cleanup-certificate-validation-records',
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
   depsUpgradeOptions: {

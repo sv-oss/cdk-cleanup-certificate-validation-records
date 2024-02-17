@@ -2,7 +2,7 @@
   "name": "@sv-oss/cdk-cleanup-certificate-validation-records",
   "repository": {
     "type": "git",
-    "url": "https://github.com/matteo.sessa/cdk-cleanup-certificate-validation-records.git"
+    "url": "https://github.com/sv-oss/cdk-cleanup-certificate-validation-records"
   },
   "scripts": {
     "build": "npx projen build",
