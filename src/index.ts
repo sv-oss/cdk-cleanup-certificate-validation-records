@@ -14,7 +14,6 @@ export interface CertificateValidationRecordCleanupProps {
   readonly certificate: cdk.aws_certificatemanager.ICertificate;
 }
 
-
 /**
  * This constructs will take care of deleting the orphaned route53 records that ACM will
  * leave behind when deleting a DNS validated certificate
@@ -74,5 +73,22 @@ export class CertificateValidationRecordCleanup extends Construct {
       onEventHandler: this.handlerFunction,
       logRetention: cdk.aws_logs.RetentionDays.ONE_WEEK,
     });
+  }
+}
+
+/**
+ * A wrapper class for a vanilla `Certificate` object with automatic cleanup attached
+ */
+export class CertificateWithCleanup extends cdk.aws_certificatemanager.Certificate {
+  constructor(scope: Construct, id: string, props: cdk.aws_certificatemanager.CertificateProps) {
+    super(scope, id, props);
+
+    if (props.validation && props.validation.props.hostedZone && props.validation?.method == cdk.aws_certificatemanager.ValidationMethod.DNS) {
+      // Attach a cleanup construct
+      new CertificateValidationRecordCleanup(this, `cleanup-${id}`, {
+        certificate: this,
+        hostedZone: props.validation.props.hostedZone,
+      });
+    }
   }
 }

@@ -7,6 +7,37 @@ The issue is better explained here: https://github.com/aws/aws-cdk/issues/11201
 
 ## Usage
 
+### With wrapper class
+
+The simplest usage is via the wrapper class `CertificateWithCleanup`.
+
+The class extends the standard `Certificate` construct and adds the cleanup automatically
+
+```typescript
+import * as cdk from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import { CertificateWithCleanup } from '@servicevic-oss/cdk-cleanup-certificate-validation-records'
+
+export class TestStack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props: TestStackProps) {
+    super(scope, id, props);
+
+    zone = new cdk.aws_route53.PublicHostedZone(this, 'Zone', {
+      zoneName: 'my.zone.net',
+    });
+
+    const cert1 = new CertificateWithCleanup(this, 'Cert', {
+      domainName: `mydomain.${zone.zoneName}`,
+      validation: cdk.aws_certificatemanager.CertificateValidation.fromDns(zone),
+      subjectAlternativeNames: [
+        `mydomain2.${zone.zoneName}`,
+        `mydomain3.${zone.zoneName}`,
+      ],
+    });
+  };
+}
+```
+
 ### Explicit instantiation
 
 The construct can be instantiated explicitely to cleanup after a specific certificate
