@@ -20,6 +20,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
       }),
     },
   },
+  autoMergeOptions: {
+    approvedReviews: 0,
+  },
   dependabot: false,
   bundledDeps: [
     'async-await-retry',
