@@ -7,6 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   jsiiVersion: '~5.3.0',
   license: 'MIT',
   name: 'cdk-cleanup-certificate-validation-records',
+  minMajorVersion: 1,
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
   repositoryUrl: 'https://github.com/sv-oss/cdk-cleanup-certificate-validation-records',
