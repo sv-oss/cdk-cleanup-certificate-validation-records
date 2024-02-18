@@ -18,10 +18,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
         appIdSecret: 'CICD_APP_ID',
         privateKeySecret: 'CICD_APP_PRIVKEY',
       }),
+      labels: ['deps-upgrade'],
     },
   },
-  autoMergeOptions: {
-    approvedReviews: 0,
+  autoApproveOptions: {
+    label: 'deps-upgrade',
+    allowedUsernames: [],
   },
   dependabot: false,
   bundledDeps: [
