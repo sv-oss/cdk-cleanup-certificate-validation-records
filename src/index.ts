@@ -43,7 +43,7 @@ export class CertificateValidationRecordCleanup extends Construct {
       resources: [props.hostedZone.hostedZoneArn],
     }));
 
-    new cdk.CustomResource(this, 'Resource', {
+    const cr = new cdk.CustomResource(this, 'Resource', {
       serviceToken: this.provider.serviceToken,
       resourceType: 'Custom::CertificateValidationRecordCleanup',
       properties: {
@@ -51,6 +51,7 @@ export class CertificateValidationRecordCleanup extends Construct {
         CertificateArn: props.certificate.certificateArn,
       },
     });
+    cr.node.addDependency(this.handlerFunction.role!);
 
     this.node.addDependency(props.certificate, props.hostedZone);
   }
