@@ -31,18 +31,6 @@ export class CertificateValidationRecordCleanup extends Construct {
     this.handlerFunction = this.getOrCreateFunction();
     this.provider = this.getOrCreateProvider();
 
-    this.handlerFunction.role?.addToPrincipalPolicy(new cdk.aws_iam.PolicyStatement({
-      actions: ['acm:DescribeCertificate'],
-      resources: [props.certificate.certificateArn],
-    }));
-    this.handlerFunction.role?.addToPrincipalPolicy(new cdk.aws_iam.PolicyStatement({
-      actions: [
-        'route53:ChangeResourceRecordSets',
-        'route53:ListResourceRecordSets',
-      ],
-      resources: [props.hostedZone.hostedZoneArn],
-    }));
-
     const cr = new cdk.CustomResource(this, 'Resource', {
       serviceToken: this.provider.serviceToken,
       resourceType: 'Custom::CertificateValidationRecordCleanup',
@@ -64,6 +52,19 @@ export class CertificateValidationRecordCleanup extends Construct {
       entry: join(__dirname, 'cleanup-certificate-validation-records.handler.js'),
       logRetention: cdk.aws_logs.RetentionDays.ONE_WEEK,
       timeout: cdk.Duration.minutes(2),
+      initialPolicy: [
+        new cdk.aws_iam.PolicyStatement({
+          actions: ['acm:DescribeCertificate'],
+          resources: ['*'],
+        }),
+        new cdk.aws_iam.PolicyStatement({
+          actions: [
+            'route53:ChangeResourceRecordSets',
+            'route53:ListResourceRecordSets',
+          ],
+          resources: ['*'],
+        }),
+      ],
     });
   }
 
