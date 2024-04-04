@@ -24,7 +24,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   autoApproveOptions: {
     label: 'deps-upgrade',
-    allowedUsernames: [],
+    allowedUsernames: [
+      'sv-oss-continuous-delivery[bot]',
+    ],
   },
   dependabot: false,
   bundledDeps: [

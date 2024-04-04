@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    if: contains(github.event.pull_request.labels.*.name, 'deps-upgrade')
+    if: contains(github.event.pull_request.labels.*.name, 'deps-upgrade') && (github.event.pull_request.user.login == 'sv-oss-continuous-delivery[bot]')
     steps:
       - uses: hmarr/auto-approve-action@v2.2.1
         with:
