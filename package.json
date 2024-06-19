@@ -34,7 +34,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.139",
+    "@types/aws-lambda": "^8.10.140",
     "@types/jest": "^29.5.12",
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^7",
@@ -62,9 +62,9 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-sdk/client-acm": "^3.598.0",
-    "@aws-sdk/client-route-53": "^3.598.0",
-    "@types/aws-lambda": "^8.10.139",
+    "@aws-sdk/client-acm": "^3.600.0",
+    "@aws-sdk/client-route-53": "^3.600.0",
+    "@types/aws-lambda": "^8.10.140",
     "async-await-retry": "^2.1.0"
   },
   "bundledDependencies": [
