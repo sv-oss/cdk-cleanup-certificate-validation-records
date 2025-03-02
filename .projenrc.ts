@@ -1,10 +1,10 @@
 import { awscdk, javascript, github } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: 'Matteo Sessa',
+  author: 'Service Victoria',
   authorAddress: 'matteo.sessa@service.vic.gov.au',
-  cdkVersion: '2.88.0',
+  cdkVersion: '2.174.0',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.3.0',
+  jsiiVersion: '~5.7.0',
   license: 'MIT',
   name: 'cdk-cleanup-certificate-validation-records',
   minMajorVersion: 1,
@@ -35,10 +35,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@aws-sdk/client-route-53',
     '@types/aws-lambda',
   ],
+  typescriptVersion: '~5.7.3',
   description: undefined,
-  devDeps: [
-    '@types/aws-lambda',
-  ],
   packageName: '@servicevic-oss/cdk-cleanup-certificate-validation-records',
 });
 project.synth();

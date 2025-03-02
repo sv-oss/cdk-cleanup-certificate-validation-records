@@ -35,8 +35,8 @@ export const handler: Handler<CleanupCertificateValidationRecordsCustomResourceE
     })));
 
     if (!response.Certificate || !response.Certificate.DomainValidationOptions) {
-      console.log('received ambigous response from api', JSON.stringify(response, null, 4));
-      throw new Error('received ambigous response from api');
+      console.log('received ambiguous response from api', JSON.stringify(response, null, 4));
+      throw new Error('received ambiguous response from api');
     }
 
     // Collect all successful DNS validations for the certificate
