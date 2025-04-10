@@ -36,7 +36,7 @@
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^29.5.14",
-    "@types/node": "ts5.7",
+    "@types/node": "^20",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "aws-cdk-lib": "2.174.0",
@@ -76,6 +76,9 @@
   "keywords": [
     "cdk"
   ],
+  "engines": {
+    "node": ">= 20.17.0"
+  },
   "main": "lib/index.js",
   "license": "MIT",
   "publishConfig": {
