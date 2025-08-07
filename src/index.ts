@@ -50,7 +50,9 @@ export class CertificateValidationRecordCleanup extends Construct {
     return stack.node.tryFindChild(id) as cdk.aws_lambda_nodejs.NodejsFunction ?? new cdk.aws_lambda_nodejs.NodejsFunction(stack, id, {
       description: 'Handler function for the CertificateValidationRecordCleanup construct',
       entry: join(__dirname, 'cleanup-certificate-validation-records.handler.js'),
-      logRetention: cdk.aws_logs.RetentionDays.ONE_WEEK,
+      logGroup: new cdk.aws_logs.LogGroup(stack, `${id}-LogGroup`, {
+        retention: cdk.aws_logs.RetentionDays.ONE_WEEK,
+      }),
       timeout: cdk.Duration.minutes(2),
       runtime: cdk.aws_lambda.Runtime.NODEJS_22_X,
       initialPolicy: [
@@ -74,7 +76,9 @@ export class CertificateValidationRecordCleanup extends Construct {
     const stack = cdk.Stack.of(this);
     return stack.node.tryFindChild(id) as cdk.custom_resources.Provider ?? new cdk.custom_resources.Provider(stack, id, {
       onEventHandler: this.handlerFunction,
-      logRetention: cdk.aws_logs.RetentionDays.ONE_WEEK,
+      logGroup: new cdk.aws_logs.LogGroup(stack, `${id}-LogGroup`, {
+        retention: cdk.aws_logs.RetentionDays.ONE_WEEK,
+      }),
     });
   }
 }
