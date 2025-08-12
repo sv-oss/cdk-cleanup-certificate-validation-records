@@ -21,6 +21,7 @@ export interface CertificateValidationRecordCleanupProps {
 export class CertificateValidationRecordCleanup extends Construct {
   static readonly HANDLER_UID = 'CertRecordsCleanupHandler-2B663BAB-7981';
   static readonly PROVIDER_UID = 'CertRecordsCleanupProvider-57EBF059-2E26';
+  static readonly LOG_GROUP_UID = 'CertRecordsCleanupLogGroup-57ABF051-1E25';
 
   public readonly handlerFunction: cdk.aws_lambda_nodejs.NodejsFunction;
   public readonly provider: cdk.custom_resources.Provider;
@@ -50,9 +51,7 @@ export class CertificateValidationRecordCleanup extends Construct {
     return stack.node.tryFindChild(id) as cdk.aws_lambda_nodejs.NodejsFunction ?? new cdk.aws_lambda_nodejs.NodejsFunction(stack, id, {
       description: 'Handler function for the CertificateValidationRecordCleanup construct',
       entry: join(__dirname, 'cleanup-certificate-validation-records.handler.js'),
-      logGroup: new cdk.aws_logs.LogGroup(stack, `${id}LogGroup`, {
-        retention: cdk.aws_logs.RetentionDays.ONE_WEEK,
-      }),
+      logGroup: this.getOrCreateLogGroup(),
       timeout: cdk.Duration.minutes(2),
       runtime: cdk.aws_lambda.Runtime.NODEJS_20_X,
       initialPolicy: [
@@ -76,7 +75,15 @@ export class CertificateValidationRecordCleanup extends Construct {
     const stack = cdk.Stack.of(this);
     return stack.node.tryFindChild(id) as cdk.custom_resources.Provider ?? new cdk.custom_resources.Provider(stack, id, {
       onEventHandler: this.handlerFunction,
-      logRetention: cdk.aws_logs.RetentionDays.ONE_WEEK,
+      logGroup: this.getOrCreateLogGroup(),
+    });
+  }
+
+  private getOrCreateLogGroup(): cdk.aws_logs.LogGroup {
+    const id = CertificateValidationRecordCleanup.LOG_GROUP_UID;
+    const stack = cdk.Stack.of(this);
+    return stack.node.tryFindChild(id) as cdk.aws_logs.LogGroup ?? new cdk.aws_logs.LogGroup(stack, id, {
+      retention: cdk.aws_logs.RetentionDays.ONE_WEEK,
     });
   }
 }

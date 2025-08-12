@@ -129,6 +129,7 @@ public readonly provider: Provider;
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.property.HANDLER_UID">HANDLER_UID</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.property.LOG_GROUP_UID">LOG_GROUP_UID</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.property.PROVIDER_UID">PROVIDER_UID</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -137,6 +138,16 @@ public readonly provider: Provider;
 
 ```typescript
 public readonly HANDLER_UID: string;
+```
+
+- *Type:* string
+
+---
+
+##### `LOG_GROUP_UID`<sup>Required</sup> <a name="LOG_GROUP_UID" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.property.LOG_GROUP_UID"></a>
+
+```typescript
+public readonly LOG_GROUP_UID: string;
 ```
 
 - *Type:* string
