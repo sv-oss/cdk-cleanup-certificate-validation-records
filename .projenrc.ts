@@ -2,9 +2,9 @@ import { awscdk, javascript, github } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Service Victoria',
   authorAddress: 'matteo.sessa@service.vic.gov.au',
-  cdkVersion: '2.210.0',
+  cdkVersion: '2.243.0',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.7.0',
+  jsiiVersion: '~5.9.0',
   license: 'MIT',
   minNodeVersion: '20.17.0',
   name: 'cdk-cleanup-certificate-validation-records',

@@ -11,7 +11,7 @@ export interface CleanupCertificateValidationRecordsRequestProperties {
 
 export type CleanupCertificateValidationRecordsCustomResourceEvent = CdkCustomResourceEvent & {
   readonly ResourceProperties: CleanupCertificateValidationRecordsRequestProperties;
-}
+};
 
 export const handler: Handler<CleanupCertificateValidationRecordsCustomResourceEvent, CdkCustomResourceResponse> = async (event, context) => {
   console.log('Received event', JSON.stringify(event, null, 4));

@@ -45,6 +45,7 @@ new CertificateValidationRecordCleanup(scope: Construct, id: string, props: Cert
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -56,6 +57,27 @@ public toString(): string
 
 Returns a string representation of this construct.
 
+##### `with` <a name="with" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -64,7 +86,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.isConstruct"></a>
 
 ```typescript
 import { CertificateValidationRecordCleanup } from '@servicevic-oss/cdk-cleanup-certificate-validation-records'
@@ -73,6 +95,20 @@ CertificateValidationRecordCleanup.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateValidationRecordCleanup.isConstruct.parameter.x"></a>
 
@@ -207,6 +243,7 @@ new CertificateWithCleanup(scope: Construct, id: string, props: CertificateProps
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.metricDaysToExpiry">metricDaysToExpiry</a></code> | Return the DaysToExpiry metric for this AWS Certificate Manager Certificate. By default, this is the minimum value over 1 day. |
 
@@ -219,6 +256,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.applyRemovalPolicy"></a>
 
@@ -271,7 +327,7 @@ data as "breaching".
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.isConstruct"></a>
 
 ```typescript
 import { CertificateWithCleanup } from '@servicevic-oss/cdk-cleanup-certificate-validation-records'
@@ -280,6 +336,20 @@ CertificateWithCleanup.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.isConstruct.parameter.x"></a>
 
@@ -354,9 +424,10 @@ Import a certificate.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.certificateArn">certificateArn</a></code> | <code>string</code> | The certificate's ARN. |
+| <code><a href="#@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.certificateRef">certificateRef</a></code> | <code>aws-cdk-lib.interfaces.aws_certificatemanager.CertificateReference</code> | A reference to a Certificate resource. |
 
 ---
 
@@ -378,16 +449,17 @@ The tree node.
 public readonly env: ResourceEnvironment;
 ```
 
-- *Type:* aws-cdk-lib.ResourceEnvironment
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed in a Stack (those created by
+creating new class instances like `new Role()`, `new Bucket()`, etc.), this
+is always the same as the environment of the stack they belong to.
+
+For referenced resources (those obtained from referencing methods like
+`Role.fromRoleArn()`, `Bucket.fromBucketName()`, etc.), they might be
+different than the stack they were imported into.
 
 ---
 
@@ -412,6 +484,18 @@ public readonly certificateArn: string;
 - *Type:* string
 
 The certificate's ARN.
+
+---
+
+##### `certificateRef`<sup>Required</sup> <a name="certificateRef" id="@servicevic-oss/cdk-cleanup-certificate-validation-records.CertificateWithCleanup.property.certificateRef"></a>
+
+```typescript
+public readonly certificateRef: CertificateReference;
+```
+
+- *Type:* aws-cdk-lib.interfaces.aws_certificatemanager.CertificateReference
+
+A reference to a Certificate resource.
 
 ---
 
