@@ -53,7 +53,7 @@ export class CertificateValidationRecordCleanup extends Construct {
       entry: join(__dirname, 'cleanup-certificate-validation-records.handler.js'),
       logGroup: this.getOrCreateLogGroup(),
       timeout: cdk.Duration.minutes(2),
-      runtime: cdk.aws_lambda.Runtime.NODEJS_20_X,
+      runtime: cdk.aws_lambda.Runtime.NODEJS_22_X,
       initialPolicy: [
         new cdk.aws_iam.PolicyStatement({
           actions: ['acm:DescribeCertificate'],
