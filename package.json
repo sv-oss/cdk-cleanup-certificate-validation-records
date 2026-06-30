@@ -52,7 +52,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.137.0",
     "jsii-rosetta": "~5.9.0",
-    "projen": "^0.100.7",
+    "projen": "^0.101.1",
     "ts-jest": "^29.4.11",
     "ts-node": "^10.9.2",
     "typescript": "~5.7.3"
@@ -62,8 +62,8 @@
     "constructs": "^10.5.1"
   },
   "dependencies": {
-    "@aws-sdk/client-acm": "^3.1075.0",
-    "@aws-sdk/client-route-53": "^3.1075.0",
+    "@aws-sdk/client-acm": "^3.1076.0",
+    "@aws-sdk/client-route-53": "^3.1076.0",
     "@types/aws-lambda": "^8.10.162",
     "async-await-retry": "^2.1.0"
   },
