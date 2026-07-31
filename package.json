@@ -63,8 +63,8 @@
     "constructs": "^10.5.1"
   },
   "dependencies": {
-    "@aws-sdk/client-acm": "^3.1098.0",
-    "@aws-sdk/client-route-53": "^3.1098.0",
+    "@aws-sdk/client-acm": "^3.1099.0",
+    "@aws-sdk/client-route-53": "^3.1099.0",
     "@types/aws-lambda": "^8.10.162",
     "async-await-retry": "^2.1.0"
   },
